@@ -33,6 +33,7 @@
     "sinon": "^1.17.4"
   },
   "dependencies": {
-    "request": "^2.72.0"
+    "request": "^2.72.0",
+    "uuid": "^2.0.2"
   }
 }

@@ -66,4 +66,22 @@ describe('Portfolio', () => {
       // expect(p1.position()).to.equal(6000);
     });
   });
+
+  describe('#getStocks', () => {
+    it('should return matching stocks from the portfolio', () => {
+      const p1 = new Portfolio('Tech');
+      const s1 = new Stock('AAPL');
+      s1.shares = 50;
+      s1.purchasePricePerShare = 100;
+      p1.addStock(s1);
+
+      const s2 = new Stock('AAPL');
+      s2.shares = 10;
+      s2.purchasePricePerShare = 200;
+      p1.addStock(s2);
+      expect(p1.stocks.length).to.equal(2);
+      const sArray = p1.getStocks('AAPL');
+      expect(sArray.length).to.equal(2);
+    });
+  });
 });
